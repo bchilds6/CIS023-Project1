@@ -25,7 +25,11 @@ public:
 	unsigned int getHour();
 	unsigned int getMinute();
 	unsigned int getSecond();
+	int getYear();
+	int getMonth();
+	int getDay();
 	bool getZero();
+	void setZero(bool);
 	
 	void printUniversal();
 	void printStandard();
@@ -37,8 +41,8 @@ private:
 	unsigned int day;
 	unsigned int year;
 
-	Time time;
-	void setZero(bool);
+	Time time1;
+	
 
 	
 	unsigned int checkDay(int aDay) ;

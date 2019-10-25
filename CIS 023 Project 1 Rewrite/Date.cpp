@@ -69,7 +69,7 @@ unsigned int Date::checkYear(int aYear) const {
 	if(aYear >= 1900 && aYear < 10000) {
 		return aYear;
 	} else {
-		printf("Invalid year (%i) set to 2011", aYear);
+		printf("Invalid year (%i) set to 2011\n", aYear);
 		return 2011;
 	}
 		
@@ -79,7 +79,7 @@ unsigned Date::checkMonth(int aMonth) const {
 	if (aMonth > 0 && aMonth <= monthsPerYear) {
 		return aMonth;
 	} else {
-		printf("Invalid month (%i) set to 1", aMonth);
+		printf("Invalid month (%i) set to 1\n", aMonth);
 		return 1;
 	}
 }

@@ -4,7 +4,7 @@ public:
 	// constant information
 	static const unsigned int monthsPerYear = 12;
 	// default constructor
-	explicit Date(int = 1, int = 1, int = 1900);
+	explicit Date(int = 1, int = 1, int = 2011);
 
 	// printer
 	void print() const;

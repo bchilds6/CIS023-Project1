@@ -7,10 +7,12 @@ DateAndTime::DateAndTime(int aMonth, int aDay, int aYear, Time aTime) {
 	setMonth(aMonth);
 	setYear(aYear);
 	setDay(aDay);
-	time.setTime(aTime.getHour(), aTime.getMinute(), aTime.getSecond());
+	time1.setTime(aTime.getHour(), aTime.getMinute(), aTime.getSecond());
 }
 
-DateAndTime::DateAndTime(Time) {
+DateAndTime::DateAndTime(Time tInput):
+time1(tInput)
+{
 	setMonth(1);
 	setYear(2011);
 	setDay(1);
@@ -21,7 +23,7 @@ DateAndTime::DateAndTime(Time) {
 void DateAndTime::print()  {
 
 	printf("%i/%i/%i ", month, day, year);
-	time.printStandard();
+	time1.printStandard();
 }
 
 void DateAndTime::setMonth(int aMonth) {
@@ -103,41 +105,56 @@ void DateAndTime::setTime(int aHour, int aMinute, int aSecond) {
 
 void DateAndTime::setHour(int aHour) {
 	if (aHour >= 0 && aHour < 24) {
-		time.setHour(aHour);
+		time1.setHour(aHour);
 	}
 	else {
 		printf("Invalid hour (%i) set to 0\n", aHour);
+		time1.setHour(0);
 	}
 }
 
 void DateAndTime::setMinute(int aMinute) {
 	if (aMinute >= 0 && aMinute < 59) {
-		time.setMinute(aMinute);
+		time1.setMinute(aMinute);
 	}
 	else {
 		printf("Invalid Minute (%i) set to 0\n", aMinute);
+		time1.setMinute(0);
 	}
 }
 
 void DateAndTime::setSecond(int aSecond) {
 	if (aSecond >= 0 && aSecond < 59) {
-		time.setSecond(aSecond);
+		time1.setSecond(aSecond);
 	}
 	else {
 		printf("Invalid Second (%i) set to 0\n", aSecond);
+		time1.setSecond(0);
 	}
 }
 
 unsigned DateAndTime::getHour() {
-	return time.getHour();
+	return time1.getHour();
 }
 
 unsigned DateAndTime::getMinute() {
-	return time.getMinute();
+	return time1.getMinute();
 }
 
 unsigned DateAndTime::getSecond() {
-	return time.getSecond();
+	return time1.getSecond();
+}
+
+int DateAndTime::getYear() {
+	return year;
+}
+
+int DateAndTime::getMonth() {
+	return month;
+}
+
+int DateAndTime::getDay() {
+	return day;
 }
 
 bool DateAndTime::getZero() {

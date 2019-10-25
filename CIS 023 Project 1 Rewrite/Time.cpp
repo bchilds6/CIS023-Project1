@@ -63,7 +63,13 @@ void Time::printUniversal() {
 }
 
 void Time::printStandard() {
-	printf("%02i:%02i:%02i %s",getHour(), getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
+	if(getHour() < 12 && getHour() >= 1) {
+		printf("%02i:%02i:%02i %s", getHour(), getMinute(), getSecond(), "AM");
+	} else if(getHour() == 12) {
+		printf("%02i:%02i:%02i %s", getHour(), getMinute(), getSecond(), "PM");
+	} else if(getHour() > 12) {
+		printf("%02i:%02i:%02i %s", getHour() - 12, getMinute(), getSecond(), "PM");
+	}
 }
 
 Time::~Time() {

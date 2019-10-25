@@ -5,7 +5,7 @@ using std::string;
 #include "DateAndTime.h"
 class Employee {
 public:
-	Employee(const string&, const string&, const Date&, const Date&, const DateAndTime&, const DateAndTime&, const int, const int, const int);
+	Employee(const string&, const string&, const Date&, const Date&, const DateAndTime&, const DateAndTime&);
 	void print();
 
 	string getFirstName();
@@ -14,10 +14,10 @@ public:
 	void getBirthDate();
 	void getStartDateTime();
 	void getEndDateTime();
-	bool testZeroDateTIme(DateAndTime);
-	void setEndDateTime(int, int, int);
+	bool testZeroDateTime(DateAndTime *in);
+	void setEndDateTime(DateAndTime);
 	static int getCount();
-
+	void calculateTrainingEndDateTime(int, int, int);
 	~Employee();
 private:
 	string firstName;
@@ -29,7 +29,7 @@ private:
 	int trainingSecondsNeeded;
 	
 	DateAndTime startDateTime;
-	DateAndTime endDateTIme;
+	DateAndTime endDateTime;
 	static int count;
 	
 };
